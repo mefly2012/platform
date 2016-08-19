@@ -36,7 +36,9 @@ class ygcq_gzgg():
         """发布时间 校验"""
         ret = None
         if ustr and len(ustr):
-            if not public.date_format(ustr):
+            if ustr != ustr.strip():
+                ret = u'还有不可见字符'
+            elif not public.date_format(ustr):
                 ret = u"不合法日期"
         return ret
 
