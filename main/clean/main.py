@@ -77,8 +77,8 @@ doc_types_clean = [
     # 'hnsw_all_info',  # 企业欠税
     # 'jyyc',#经营异常
     # 'jijinye_info',#中国基金业协会
-    # 'ygcq_gzgg',#阳光产权
-    # 'ygcq_zb',#阳光产权招标
+    'ygcq_gzgg',#阳光产权
+    'ygcq_zb',#阳光产权招标
     # 'ddb_gzjfw_zhaobiao',
     # 'guizhou_zhaobiao',
     # 'ddb_gzjfw_zhongbiao',#中标
@@ -87,7 +87,7 @@ doc_types_clean = [
     # 'qyxg_baidutiebawt',#百度贴吧
     # 'qyxg_sinablog_data',#新浪博客
     # 'qyxg_wechatofficialid',#微信公众号
-    'qyxg_xinwenyuqing_data',#新闻舆情
+    # 'qyxg_xinwenyuqing_data',#新闻舆情
 ]
 
 
