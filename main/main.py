@@ -34,8 +34,8 @@ doc_types_clean = [
     # 'qyxg_wscpws',
     #
     # 'zhixing',                                 #被执行人
-    'dishonesty',                              #失信被执行人
-    'recruit',                                 #招聘
+    # 'dishonesty',                              #失信被执行人
+    # 'recruit',                                 #招聘
     # 'xgxx_shangbiao',                          #商标
     # 'shgy_zhaobjg',                            #中国国际中标网-招标公告
     # 'shgy_zhongbjg',                           #中国国际中标网-中标公告
@@ -43,7 +43,7 @@ doc_types_clean = [
     # 'overseas_investment',                     #境外投资
     # 'qyxx_wanfang_zhuanli',                    #万方专利
     # 'tddy',                                    #土地抵押
-    'tdzr',                                    #土地转让
+    # 'tdzr',                                    #土地转让
     # 'dcos',                                    #双软认证
     # 'qyxx_enterpriseQualificationForeign',     #通信建设企业资质
     # 'qyxx_gcjljz',                             #工程监理资质
@@ -59,7 +59,7 @@ doc_types_clean = [
     # 'qyxx_nyscqyzzcx',                         #农药生产企业资质
     # 'qyxx_tk',                                 #采矿权许可证
     # 'qyxx_ck',  # 探矿权许可证
-    'xzcf',                                    #行政处罚
+    # 'xzcf',                                    #行政处罚
     # 'rjzzq',                                   #计算机软件著作权登记公告
     # 'qyxx_finance_xkz',                        #金融许可证
     # 'qylogo',                                  #企业logo
@@ -71,6 +71,8 @@ doc_types_clean = [
     # 'zhuanli_zhuanyi',                         #专利转移
     # 'zpzzq',                                   #作品著作权登记公告爬虫
     # 'zuzhijigoudm'                             #组织机构代码
+    'ygcq_gzgg',  # 阳光产权
+    'ygcq_zb',  # 阳光产权招标
 ]
 doc_types_clean_validate = doc_types_clean
 doc_types_parse = [

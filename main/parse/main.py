@@ -43,9 +43,11 @@ doc_types_parse = [
     # 'ssgs_zjzx',  # 上市公司数据-中金在线
     # 'tddkgs',  # 土地市场-地块公示
     # 'zhuanli_zhuanyi',  # 专利转移
-    'sfpm_taobao',  # 司法拍卖淘宝网
-    # 'gdsw_all_info',  # 企业欠税
-    # 'hnsw_all_info'  # 企业欠税
+    # 'sfpm_taobao',  # 司法拍卖淘宝网
+    'gdsw_all_info',  # 企业欠税
+    'hnsw_all_info',  # 企业欠税
+    'ygcq_gzgg',  # 阳光产权
+    'ygcq_zb',  # 阳光产权招标
 
 ]
 

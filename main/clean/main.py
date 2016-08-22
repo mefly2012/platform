@@ -75,10 +75,10 @@ doc_types_clean = [
     #'sfpm_taobao',  # 司法拍卖淘宝网
     # 'gdsw_all_info',  # 企业欠税
     # 'hnsw_all_info',  # 企业欠税
-    # 'jyyc',#经营异常
-    # 'jijinye_info',#中国基金业协会
-    'ygcq_gzgg',#阳光产权
-    'ygcq_zb',#阳光产权招标
+    'qyxg_jyyc',#经营异常
+    'jijinye_info',#中国基金业协会
+    # 'ygcq_gzgg',#阳光产权
+    # 'ygcq_zb',#阳光产权招标
     # 'ddb_gzjfw_zhaobiao',
     # 'guizhou_zhaobiao',
     # 'ddb_gzjfw_zhongbiao',#中标

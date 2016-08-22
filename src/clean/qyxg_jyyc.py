@@ -9,9 +9,10 @@ sys.setdefaultencoding('utf-8')
 from common import public
 
 
-class jyyc():
+class qyxg_jyyc():
     """经营异常"""
     need_check_ziduan = [u'regno_or_creditcode',
+                         u'punish_org',
                          u'rank_date',
                          u'remove_date',
                          u'company_name',
@@ -26,6 +27,15 @@ class jyyc():
         if ustr and len(ustr):
             if re.compile(u'[^0-9a-zA-Z\u4e00-\u9fa5\-]').search(ustr):
                 ret = u'还有数字字母汉字-之外的符号'
+        return ret
+
+    def check_punish_org(self, source, ustr):
+        """作出决定机关"""
+        ret = None
+        if ustr and len(ustr):
+            if re.compile(u'\d{4}').search(ustr):  # 有决定文书号
+                if u' ' in ustr:
+                    ret = u'还有空格'
         return ret
 
     def check_rank_date(self, source, ustr):

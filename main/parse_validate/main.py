@@ -31,7 +31,7 @@ doc_types_parse_validate = [
     # 'qyxg_wscpws',
 
     # 'zhixing',  # 被执行人
-    'dishonesty',  # 失信被执行人
+    # 'dishonesty',  # 失信被执行人
     # 'recruit',  # 招聘
     # 'xgxx_shangbiao',  # 商标
     # 'shgy_zhaobjg',  # 中国国际中标网-招标公告
@@ -41,6 +41,8 @@ doc_types_parse_validate = [
     # 'qyxx_ck',  # 探矿权许可证
     # 'ssgs_zjzx',  # 上市公司数据-中金在线
     # #空的需求'zhuanli_zhuanyi'  # 专利转移
+    'ygcq_gzgg',  # 阳光产权
+    'ygcq_zb',  # 阳光产权招标
 ]
 
 err_file_path = os.path.split(os.path.realpath(__file__))[0]
