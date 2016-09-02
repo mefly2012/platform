@@ -35,7 +35,7 @@ doc_types_parse = [
     # 'dishonesty',  # 失信被执行人
     # 'recruit',  # 招聘
     # 'xgxx_shangbiao',  # 商标
-    # # ----'shgy_zhaobjg',                            #中国国际中标网-招标公告
+    'shgy_zhaobjg',  # 中国国际中标网-招标公告
     # # ----'shgy_zhongbjg',                           #中国国际中标网-中标公告
     # 'qyxx_nyscqyzzcx',  # 农药生产企业资质
     # 'qyxx_tk',  # 采矿权许可证
@@ -44,10 +44,15 @@ doc_types_parse = [
     # 'tddkgs',  # 土地市场-地块公示
     # 'zhuanli_zhuanyi',  # 专利转移
     # 'sfpm_taobao',  # 司法拍卖淘宝网
-    'gdsw_all_info',  # 企业欠税
-    'hnsw_all_info',  # 企业欠税
-    'ygcq_gzgg',  # 阳光产权
-    'ygcq_zb',  # 阳光产权招标
+    # 'gdsw_all_info',  # 企业欠税
+    # 'hnsw_all_info',  # 企业欠税
+    # 'ygcq_gzgg',  # 阳光产权
+    # 'ygcq_zb',  # 阳光产权招标
+    # 'ddb_gzjfw_zhaobiao',
+    # 'guizhou_zhaobiao',
+    # 'ddb_gzjfw_zhongbiao',  # 中标
+    # 'guizhou_zhongbiao',
+    # 'qyxg_jyyc',  # 组织机构代码
 
 ]
 

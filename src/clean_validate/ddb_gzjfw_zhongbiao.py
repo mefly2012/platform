@@ -8,7 +8,7 @@ from common import public
 import re
 
 
-class ddb_gzjfw_zhaobiao():
+class ddb_gzjfw_zhongbiao():
     need_check_ziduan = [u'bbd_dotime',
                          u'main',
                          u'title',

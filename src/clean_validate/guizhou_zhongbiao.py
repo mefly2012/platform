@@ -8,12 +8,12 @@ from common import public
 import re
 
 
-class guizhou_zhaobiao():
+class guizhou_zhongbiao():
     need_check_ziduan = [u'bbd_dotime',
                          u'main',
                          u'title',
                          u'pubdate',
-                         u'company_name',
+                         u'company_name_invite',
                          u'bidwinning_pubdate'
                          ]
 
@@ -50,7 +50,7 @@ class guizhou_zhaobiao():
             ret = u'为空'
         return ret
 
-    def check_company_name(self, source, ustr):
+    def check_company_name_invite(self, source, ustr):
         ret = None
         if ustr and len(ustr):
             if not public.has_count_hz(ustr, 2) \

@@ -32,60 +32,6 @@ class qyxg_jyyc():
 
     def check_jyyc(self, source, ustr):
 
-        def check_punish_org(key, ustr):
-            """作出决定机关(列入）"""
-            ret = None
-            if ustr and len(ustr):
-                if re.compile(u'\d{4}').search(ustr):  # 有决定文书号
-                    if u' ' in ustr:
-                        ret = key + u' 还有空格'
-                elif any(c in ustr for c in u'][)(〔〕［］' + public.QUANJIAO_NUM + public.QUANJIAO_EN):
-                    ret = key + u' 还有特殊字符'
-
-            return ret
-
-        def check_punish_orgout(key, ustr):
-            """作出决定机关(列出）"""
-            ret = None
-            if ustr and len(ustr):
-                if re.compile(u'\d{4}').search(ustr):  # 有决定文书号
-                    if u' ' in ustr:
-                        ret = key + u' 还有空格'
-                elif any(c in ustr for c in u'][)(〔〕［］' + public.QUANJIAO_NUM + public.QUANJIAO_EN):
-                    ret = key + u' 还有特殊字符'
-            return ret
-
-        def check_decide_docno(key, ustr):
-            """决定文书号"""
-            ret = None
-            if ustr and len(ustr):
-                if any(c in ustr for c in u'][)(〔〕［］' + public.QUANJIAO_NUM + public.QUANJIAO_EN):
-                    ret = key + u' 还有特殊字符'
-            return ret
-
-        def check_rank_date(key, ustr):
-            """列入日期"""
-            ret = None
-            if ustr and len(ustr):
-                if not public.date_format(ustr):
-                    ret = key + u" 不合法日期"
-            return ret
-
-        def check_remove_date(key, ustr):
-            """移出日期"""
-            ret = None
-            if ustr and len(ustr):
-                if not public.date_format(ustr):
-                    ret = key + u' 不合法日期'
-            return ret
-
-        need_list = [
-            u'punish_org',
-            u'punish_orgout',
-            u'decide_docno',
-            u'rank_date',
-            u'remove_date',
-        ]
         obj_jyyc = json.loads(ustr)
         ret = ''
         ret1 = None
@@ -93,19 +39,35 @@ class qyxg_jyyc():
         ret3 = None
         ret4 = None
         ret5 = None
-        retlist = []
-        for i in obj_jyyc:
-            ret1 = check_punish_org('punish_org', i[u'punish_org'])
-            ret2 = check_punish_orgout('punish_orgout', i[u'punish_orgout'])
-            ret3 = check_decide_docno('decide_docno', i[u'decide_docno'])
-            ret4 = check_rank_date('rank_date', i[u'rank_date'])
-            ret5 = check_remove_date('remove_date', i[u'remove_date'])
 
-            retlist.extend([ret1, ret2, ret3, ret4, ret5])
+        for n, i in enumerate(obj_jyyc):
+            busexcep_list = i[u'busexcep_list']  # 列入经营异常名录原因
+            remove_busexcep_list = i[u'remove_busexcep_list']  # 移出经营异常名录原因
+            decision_org = i[u'decision_org']  # 作出决定机关
+            punish_org = i[u'punish_org']  # 作出决定机关（列入）
+            punish_orgout = i[u'punish_orgout']  # 作出决定机关（移出）
+            notice_type = i[u'notice_type']  # 公告类型
+            decide_docno = i[u'decide_docno']  # 决定文书号
 
-        for i in retlist:
-            if i:
-                ret += i
+            if len(busexcep_list.strip()) and not len(remove_busexcep_list.strip()):
+                if notice_type != u'列入':
+                    ret += u'第%d条 公告类型不为列入\n' % n
+
+                if len(decision_org) and decision_org != punish_org:
+                    ret += u'第%d条 作出决定机关不为作出决定机关（列入）\n' % n
+            elif not len(busexcep_list.strip()) and len(remove_busexcep_list.strip()):
+                if notice_type != u'移出':
+                    ret += u'第%d条 公告类型不为移出\n' % n
+                if len(decision_org) and decision_org != punish_orgout:
+                    ret += u'第%d条 作出决定机关不为作出决定机关（移出）\n' % n
+            elif len(busexcep_list.strip()) and len(remove_busexcep_list.strip()):
+                if notice_type != u'列入;移出':
+                    ret += u'第%d条 公告类型不为列入;移出\n' % n
+            if source[u'case_type'] == u'北京':
+                if u';' in (punish_org, punish_orgout) or re.compile(u'\d{4}').search(punish_org) \
+                        or re.compile(u'\d{4}').search(punish_orgout):
+                    ret += u'第%d条 还有分号或者四个数字的在做出决定机关里面' % n
+
         return ret if ret != '' else None
 
     def check_company_name(self, source, ustr):

@@ -75,8 +75,8 @@ doc_types_clean = [
     #'sfpm_taobao',  # 司法拍卖淘宝网
     # 'gdsw_all_info',  # 企业欠税
     # 'hnsw_all_info',  # 企业欠税
-    'qyxg_jyyc',#经营异常
-    'jijinye_info',#中国基金业协会
+    # 'qyxg_jyyc',#经营异常
+    # 'jijinye_info',#中国基金业协会
     # 'ygcq_gzgg',#阳光产权
     # 'ygcq_zb',#阳光产权招标
     # 'ddb_gzjfw_zhaobiao',
@@ -88,6 +88,7 @@ doc_types_clean = [
     # 'qyxg_sinablog_data',#新浪博客
     # 'qyxg_wechatofficialid',#微信公众号
     # 'qyxg_xinwenyuqing_data',#新闻舆情
+    'qyxg_zzjgdm'#组织机构代码
 ]
 
 

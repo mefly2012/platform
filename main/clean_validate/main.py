@@ -88,6 +88,7 @@ doc_types_clean = [
     # 'qyxg_sinablog_data',  # 新浪博客
     # 'qyxg_wechatofficialid',  # 微信公众号
     # 'qyxg_xinwenyuqing_data',  # 新闻舆情
+    # 'qyxg_zzjgdm'  # 组织机构代码
 ]
 doc_types_clean_validate = doc_types_clean
 
