@@ -28,10 +28,10 @@ doc_types_clean = [
     # 'cdfy_sfgk',
     # 'newktgg',
     # 'zyktgg',
-    # 'zgcpwsw',
-    # 'itslaw',
-    # 'qyxg_zgcpwsw',
-    # 'qyxg_wscpws',
+    'zgcpwsw',
+    'itslaw',
+    'qyxg_zgcpwsw',
+    'qyxg_wscpws',
     #
     # 'zhixing',                                 #被执行人
     # 'dishonesty',                              #失信被执行人
@@ -71,8 +71,8 @@ doc_types_clean = [
     # 'zhuanli_zhuanyi',                         #专利转移
     # 'zpzzq',                                   #作品著作权登记公告爬虫
     # 'zuzhijigoudm'                             #组织机构代码
-    'ygcq_gzgg',  # 阳光产权
-    'ygcq_zb',  # 阳光产权招标
+    # 'ygcq_gzgg',  # 阳光产权
+    # 'ygcq_zb',  # 阳光产权招标
 ]
 doc_types_clean_validate = doc_types_clean
 doc_types_parse = [
@@ -154,7 +154,7 @@ if __name__ == '__main__':
         doc_path = err_file_path
         for doc_type in doc_types:
             WANT_TO_GET = '' + doc_type.upper()
-            #WANT_TO_GET = '' + doc_type
+            # WANT_TO_GET = '' + doc_type
             if not os.path.exists(os.path.join(doc_path, doc_type)):
                 # 解析层 /user/bbdhadoop/20160705_parser/
                 # 入库层 /user/bbdhadoop/20160705/
@@ -165,8 +165,8 @@ if __name__ == '__main__':
                 # add_path='/success/*'
                 # if WANT_TO_GET in (U'DISHONESTY', u'ZHIXING'):
                 #     add_path = '/spilt/*'
-                os.system('hadoop fs -getmerge  /user/bbdhadoop/20160705_parser/' + WANT_TO_GET + ' ' + doc_path + os.sep + doc_type)#解析层
-                #os.system('hadoop fs -getmerge  /user/dataom/20160705_validate_parse/' + WANT_TO_GET + add_path + ' ' + doc_path + os.sep + doc_type)
+                os.system('hadoop fs -getmerge  /user/bbdhadoop/20160705_parser/' + WANT_TO_GET + ' ' + doc_path + os.sep + doc_type)  # 解析层
+                # os.system('hadoop fs -getmerge  /user/dataom/20160705_validate_parse/' + WANT_TO_GET + add_path + ' ' + doc_path + os.sep + doc_type)
 
             mod = __import__('src.' + to_run + '.' + doc_type, fromlist=[doc_type])
             if hasattr(mod, doc_type):

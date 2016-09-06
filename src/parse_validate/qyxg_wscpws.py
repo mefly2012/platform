@@ -8,13 +8,12 @@ import re
 from common import public
 
 
-
 class qyxg_wscpws():
     """开庭公告"""
     need_check_ziduan = ['caseout_come',
                          'court_litigant',
-                         'court_acceptance_fee',
-                         'historycase'
+                         # 'court_acceptance_fee',
+                         # 'historycase'
                          ]
 
     def check_caseout_come(self, indexstr, ustr):

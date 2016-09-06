@@ -8,7 +8,6 @@ import re
 from common import public
 
 
-
 class qyxg_zgcpwsw():
     """开庭公告"""
 
@@ -21,9 +20,10 @@ class qyxg_zgcpwsw():
         'def_litigant',
         'pro_other_related',
         'def_other_related',
-        'court_acceptance_fee',
-        'historycase'
+        # 'court_acceptance_fee',
+        # 'historycase'
     ]
+
     def check_company_name(self, indexstr, ustr):
         """company_name"""
         """不可为空，至少包含两个中文汉字或两个英文字母"""
@@ -47,7 +47,10 @@ class qyxg_zgcpwsw():
         """案件结果"""
         """可为空，若非空至少包含两个中文汉字或两个英文字母"""
         ret = None
-
+        if ustr and len(ustr):
+            if not public.has_count_hz(ustr, 2) \
+                    and not public.has_count_en(ustr, 2):
+                ret = u'没有2个以上汉字页没有2个英文字母'
         return ret
 
     def check_court_litigant(self, indexstr, ustr):
