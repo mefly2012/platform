@@ -29,7 +29,7 @@ class qyxg_wscpws():
     def check_court_litigant(self, indexstr, ustr):
         """法院当事人"""
         """可为空，若非空至少包含两个中文汉字或两个英文字母"""
-        ret = 111
+        ret = None
         if ustr and len(ustr):
             if not public.has_count_hz(ustr, 2) \
                     and not public.has_count_en(ustr, 2):

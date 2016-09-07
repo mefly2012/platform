@@ -100,7 +100,7 @@ class check_base():
             except Exception as e:
                 err_line += 1
                 print count, e
-                continue
+                break  # 出错就终止
         fl.close()
         endtime = time.time()
         timestap = (endtime - starttime)

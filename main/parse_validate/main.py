@@ -25,9 +25,9 @@ doc_types_parse_validate = [
     # 'newktgg',
     # 'zyktgg',
 
-    'zgcpwsw',
-    'itslaw',
-    'qyxg_zgcpwsw',
+    # 'zgcpwsw',
+    # 'itslaw',
+    # 'qyxg_zgcpwsw',
     'qyxg_wscpws',
 
     # 'zhixing',  # 被执行人
