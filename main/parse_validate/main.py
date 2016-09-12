@@ -28,10 +28,10 @@ doc_types_parse_validate = [
     # 'zgcpwsw',
     # 'itslaw',
     # 'qyxg_zgcpwsw',
-    # 'qyxg_wscpws',
+    'qyxg_wscpws',
 
     # 'zhixing',  # 被执行人
-    'dishonesty',  # 失信被执行人
+    # 'dishonesty',  # 失信被执行人
     # 'recruit',  # 招聘
     # 'xgxx_shangbiao',  # 商标
     # 'shgy_zhaobjg',  # 中国国际中标网-招标公告
@@ -41,6 +41,12 @@ doc_types_parse_validate = [
     # 'qyxx_ck',  # 探矿权许可证
     # 'ssgs_zjzx',  # 上市公司数据-中金在线
     # #空的需求'zhuanli_zhuanyi'  # 专利转移
+    # 'ygcq_gzgg',  # 阳光产权
+    # 'ygcq_zb',  # 阳光产权招标
+    # 'ddb_gzjfw_zhaobiao',
+    # 'guizhou_zhaobiao',
+    # 'ddb_gzjfw_zhongbiao',  # 中标
+    # 'guizhou_zhongbiao',
 ]
 
 err_file_path = os.path.split(os.path.realpath(__file__))[0]
@@ -74,8 +80,8 @@ if __name__ == '__main__':
     elif run_type == 'single_file':
         doc_path = err_file_path
         for doc_type in doc_types:
-            WANT_TO_GET = '' + doc_type.upper()
-            #WANT_TO_GET = '' + doc_type
+            # WANT_TO_GET = '' + doc_type.upper()
+            WANT_TO_GET = '' + doc_type
             if not os.path.exists(os.path.join(doc_path, doc_type)):
                 # 解析层 /user/bbdhadoop/20160705_parser/
                 # 入库层 /user/bbdhadoop/20160705/
@@ -86,8 +92,8 @@ if __name__ == '__main__':
                 # add_path='/success/*'
                 # if WANT_TO_GET in (U'DISHONESTY', u'ZHIXING'):
                 #     add_path = '/spilt/*'
-                os.system('hadoop fs -getmerge  /user/dataom/20160705_validate_parse/' + WANT_TO_GET + '/spilt ' + doc_path + os.sep + doc_type)#解析层
-                #os.system('hadoop fs -getmerge  /user/dataom/20160705_validate_parse/' + WANT_TO_GET + add_path + ' ' + doc_path + os.sep + doc_type)
+                os.system('hadoop fs -getmerge  /user/dataom/20160801-validate-parser/' + WANT_TO_GET + '/success ' + doc_path + os.sep + doc_type)  # 解析层
+                # os.system('hadoop fs -getmerge  /user/dataom/20160705_validate_parse/' + WANT_TO_GET + add_path + ' ' + doc_path + os.sep + doc_type)
 
             mod = __import__('src.' + to_run + '.' + doc_type, fromlist=[doc_type])
             if hasattr(mod, doc_type):

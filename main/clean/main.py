@@ -75,7 +75,7 @@ doc_types_clean = [
     #'sfpm_taobao',  # 司法拍卖淘宝网
     # 'gdsw_all_info',  # 企业欠税
     # 'hnsw_all_info',  # 企业欠税
-    # 'jyyc',#经营异常
+    # 'qyxg_jyyc',#经营异常
     # 'jijinye_info',#中国基金业协会
     # 'ygcq_gzgg',#阳光产权
     # 'ygcq_zb',#阳光产权招标
@@ -87,7 +87,11 @@ doc_types_clean = [
     # 'qyxg_baidutiebawt',#百度贴吧
     # 'qyxg_sinablog_data',#新浪博客
     # 'qyxg_wechatofficialid',#微信公众号
-    'qyxg_xinwenyuqing_data',#新闻舆情
+    # 'qyxg_xinwenyuqing_data',#新闻舆情
+    # 'qyxg_zzjgdm',#组织机构代码
+    'qyxg_chinesefinancialnews',
+    'qyxg_shanghai_finance_office',
+    'qyxg_weiyangwang'
 ]
 
 
@@ -134,7 +138,7 @@ if __name__ == '__main__':
                 # add_path='/success/*'
                 # if WANT_TO_GET in (U'DISHONESTY', u'ZHIXING'):
                 #     add_path = '/spilt/*'
-                os.system('hadoop fs -getmerge  /user/dataom/20160801-cleaner/' + WANT_TO_GET + ' ' + doc_path + os.sep + doc_type)#解析层
+                os.system('hadoop fs -getmerge  /user/dataom/20160901-cleaner/' + WANT_TO_GET + ' ' + doc_path + os.sep + doc_type)#解析层
                 #os.system('hadoop fs -getmerge  /user/dataom/20160705_validate_parse/' + WANT_TO_GET + add_path + ' ' + doc_path + os.sep + doc_type)
 
             mod = __import__('src.' + to_run + '.' + doc_type, fromlist=[doc_type])

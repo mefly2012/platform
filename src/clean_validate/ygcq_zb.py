@@ -52,11 +52,6 @@ class ygcq_zb():
 
     def check_pubdate(self, source, ustr):
         ret = None
-        if ustr and len(ustr):
-            if not public.date_format(ustr):
-                ret = u"不合法日期"
-        else:
-            ret = u'为空'
         return ret
 
     def check_data_sources(self, source, ustr):

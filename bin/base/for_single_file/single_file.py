@@ -53,8 +53,9 @@ class check_base():
     def deal_all_check(self, _id, _source):
         for i_str in self.need_to_check:
             value = None
+            value = _source[i_str]
+
             try:
-                value = _source[i_str]
                 if value is not None:
                     value = unicode(value)
             except:
@@ -92,14 +93,14 @@ class check_base():
                 # jsobj = eval(line)
                 # jsobj2 = json.dumps(jsobj)
                 jsobj = json.loads(line)
-                # jsobj = jsobj.get('raw_data')###解析验证层的
+                #jsobj = jsobj.get('raw_data')  ###解析验证层的
                 ok_line += 1
                 _id = jsobj['_id']
                 self.deal_all_check(_id, jsobj)
             except Exception as e:
                 err_line += 1
-                print count
-                continue
+                print count, e
+                break  # 出错就终止
         fl.close()
         endtime = time.time()
         timestap = (endtime - starttime)

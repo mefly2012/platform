@@ -18,7 +18,7 @@ class zgcpwsw():
                          'pro_other_related',
                          'def_other_related',
                          'applicable_law',
-                         'company_name'
+                         # 'company_name'
 
                          ]
 

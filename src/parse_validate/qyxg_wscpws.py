@@ -8,13 +8,12 @@ import re
 from common import public
 
 
-
 class qyxg_wscpws():
     """开庭公告"""
     need_check_ziduan = ['caseout_come',
                          'court_litigant',
-                         'court_acceptance_fee',
-                         'historycase'
+                         # 'court_acceptance_fee',
+                         # 'historycase'
                          ]
 
     def check_caseout_come(self, indexstr, ustr):
@@ -30,7 +29,7 @@ class qyxg_wscpws():
     def check_court_litigant(self, indexstr, ustr):
         """法院当事人"""
         """可为空，若非空至少包含两个中文汉字或两个英文字母"""
-        ret = 111
+        ret = None
         if ustr and len(ustr):
             if not public.has_count_hz(ustr, 2) \
                     and not public.has_count_en(ustr, 2):

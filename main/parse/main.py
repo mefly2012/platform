@@ -35,7 +35,7 @@ doc_types_parse = [
     # 'dishonesty',  # 失信被执行人
     # 'recruit',  # 招聘
     # 'xgxx_shangbiao',  # 商标
-    # # ----'shgy_zhaobjg',                            #中国国际中标网-招标公告
+    # 'shgy_zhaobjg',  # 中国国际中标网-招标公告
     # # ----'shgy_zhongbjg',                           #中国国际中标网-中标公告
     # 'qyxx_nyscqyzzcx',  # 农药生产企业资质
     # 'qyxx_tk',  # 采矿权许可证
@@ -43,9 +43,16 @@ doc_types_parse = [
     # 'ssgs_zjzx',  # 上市公司数据-中金在线
     # 'tddkgs',  # 土地市场-地块公示
     # 'zhuanli_zhuanyi',  # 专利转移
-    'sfpm_taobao',  # 司法拍卖淘宝网
+    # 'sfpm_taobao',  # 司法拍卖淘宝网
     # 'gdsw_all_info',  # 企业欠税
-    # 'hnsw_all_info'  # 企业欠税
+    # 'hnsw_all_info',  # 企业欠税
+    # 'ygcq_gzgg',  # 阳光产权
+    # 'ygcq_zb',  # 阳光产权招标
+    # 'ddb_gzjfw_zhaobiao',
+    # 'guizhou_zhaobiao',
+    # 'ddb_gzjfw_zhongbiao',  # 中标
+    # 'guizhou_zhongbiao',
+    'qyxg_jyyc',  #
 
 ]
 
@@ -92,7 +99,7 @@ if __name__ == '__main__':
                 # add_path='/success/*'
                 # if WANT_TO_GET in (U'DISHONESTY', u'ZHIXING'):
                 #     add_path = '/spilt/*'
-                os.system('hadoop fs -getmerge  /user/dataom/20160801-parser/' + WANT_TO_GET + ' ' + doc_path + os.sep + doc_type)  # 解析层
+                os.system('hadoop fs -getmerge  /user/dataom/20160901-parser/' + WANT_TO_GET + ' ' + doc_path + os.sep + doc_type)  # 解析层
                 # os.system('hadoop fs -getmerge  /user/dataom/20160705_validate_parse/' + WANT_TO_GET + add_path + ' ' + doc_path + os.sep + doc_type)
 
             mod = __import__('src.' + to_run + '.' + doc_type, fromlist=[doc_type])

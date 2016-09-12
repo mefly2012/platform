@@ -10,21 +10,22 @@ from common import public
 
 class shgy_zhaobjg():
     """招标"""
-    need_check_ziduan = ['project_name',
-                         'project_number',
-                         'invite_starttime',
-                         'invite_deadline',
-                         'bid_opentime',
+    need_check_ziduan = [
+        # 'project_name',
+        #                  'project_number',
+        #                  'invite_starttime',
+        #                  'invite_deadline',
+        #                  'bid_opentime',
                          'company_name_invite',
-                         'telephone',
-                         'email',
-                         'fax',
-                         'agency_name',
-                         'agency_telephone',
-                         'agency_email',
-                         'agency_fax',
-                         'bidwinning_pubdate',
-                         'company_name_win'
+        #                  'telephone',
+        #                  'email',
+        #                  'fax',
+        #                  'agency_name',
+        #                  'agency_telephone',
+        #                  'agency_email',
+        #                  'agency_fax',
+        #                  'bidwinning_pubdate',
+        #                  'company_name_win'
                          ]
 
     #########################################################
@@ -61,7 +62,9 @@ class shgy_zhaobjg():
     def check_company_name_invite(self, indexstr, ustr):
         """招标单位名称"""
         ret = None
-
+        if ustr and len(ustr):
+            if ustr == u'贵州阳光产权交易所有限公司':
+                ret = u'招标单位错误'
         return ret
 
     def check_telephone(self, indexstr, ustr):

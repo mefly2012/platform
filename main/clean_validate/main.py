@@ -75,7 +75,7 @@ doc_types_clean = [
     # 'sfpm_taobao',  # 司法拍卖淘宝网
     # 'gdsw_all_info',  # 企业欠税
     # 'hnsw_all_info'  # 企业欠税
-    # 'jyyc',  # 经营异常
+    'qyxg_jyyc',  # 经营异常
     # 'jijinye_info',  # 中国基金业协会
     # 'ygcq_gzgg',  # 阳光产权
     # 'ygcq_zb',  # 阳光产权招标
@@ -83,11 +83,12 @@ doc_types_clean = [
     # 'guizhou_zhaobiao',
     # 'ddb_gzjfw_zhongbiao',  # 中标
     # 'guizhou_zhongbiao',
-    'domain_name_website_info',  # 企业网站信息
+    # 'domain_name_website_info',  # 企业网站信息
     # 'qyxg_baidutiebawt',  # 百度贴吧
     # 'qyxg_sinablog_data',  # 新浪博客
     # 'qyxg_wechatofficialid',  # 微信公众号
     # 'qyxg_xinwenyuqing_data',  # 新闻舆情
+    # 'qyxg_zzjgdm'  # 组织机构代码
 ]
 doc_types_clean_validate = doc_types_clean
 
