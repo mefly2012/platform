@@ -93,7 +93,7 @@ class check_base():
                 # jsobj = eval(line)
                 # jsobj2 = json.dumps(jsobj)
                 jsobj = json.loads(line)
-                jsobj = jsobj.get('raw_data')  ###解析验证层的
+                #jsobj = jsobj.get('raw_data')  ###解析验证层的
                 ok_line += 1
                 _id = jsobj['_id']
                 self.deal_all_check(_id, jsobj)

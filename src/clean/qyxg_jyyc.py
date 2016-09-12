@@ -7,6 +7,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 import json
 from common import public
+import os
 
 
 class qyxg_jyyc():
@@ -39,7 +40,7 @@ class qyxg_jyyc():
                 if re.compile(u'\d{4}').search(ustr):  # 有决定文书号
                     if u' ' in ustr:
                         ret = key + u' 还有空格'
-                elif any(c in ustr for c in u'][)(〔〕［］' + public.QUANJIAO_NUM + public.QUANJIAO_EN):
+                elif any(c in ustr for c in u'】【][)(〔〕［］' + public.QUANJIAO_NUM + public.QUANJIAO_EN):
                     ret = key + u' 还有特殊字符'
 
             return ret
@@ -51,7 +52,7 @@ class qyxg_jyyc():
                 if re.compile(u'\d{4}').search(ustr):  # 有决定文书号
                     if u' ' in ustr:
                         ret = key + u' 还有空格'
-                elif any(c in ustr for c in u'][)(〔〕［］' + public.QUANJIAO_NUM + public.QUANJIAO_EN):
+                elif any(c in ustr for c in u'】【][)(〔〕［］' + public.QUANJIAO_NUM + public.QUANJIAO_EN):
                     ret = key + u' 还有特殊字符'
             return ret
 
@@ -59,7 +60,7 @@ class qyxg_jyyc():
             """决定文书号"""
             ret = None
             if ustr and len(ustr):
-                if any(c in ustr for c in u'][)(〔〕［］' + public.QUANJIAO_NUM + public.QUANJIAO_EN):
+                if any(c in ustr for c in u'】【][)(〔〕［］' + public.QUANJIAO_NUM + public.QUANJIAO_EN):
                     ret = key + u' 还有特殊字符'
             return ret
 
@@ -105,7 +106,7 @@ class qyxg_jyyc():
 
         for i in retlist:
             if i:
-                ret += i
+                ret += i + os.linesep
         return ret if ret != '' else None
 
     def check_company_name(self, source, ustr):
@@ -156,5 +157,5 @@ class qyxg_jyyc():
 
 
 if __name__ == '__main__':
-    a = jyyc()
+    a = qyxg_jyyc()
     print a.check_company_name(1, u'我。我的')

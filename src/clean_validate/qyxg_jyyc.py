@@ -11,7 +11,8 @@ from common import public
 
 class qyxg_jyyc():
     """经营异常"""
-    need_check_ziduan = [  # u'regno_or_creditcode',
+    need_check_ziduan = [
+        u'regno_or_creditcode',
         # u'punish_org',
         # u'busexcep_list',
         u'jyyc',  # u'rank_date',
@@ -25,8 +26,13 @@ class qyxg_jyyc():
     def check_regno_or_creditcode(self, source, ustr):
         """注册号/统一社会信用代码"""
         ret = None
-        # if ustr and len(ustr):
-        #     pass
+        if ustr and len(ustr):
+            if public.check_brackets_match(ustr):
+                if any(c in ustr for c in ')('):
+                    ret = u'还有成对的括号呢'
+            elif len(ustr) > 18:
+                ret = u'长度大于18'
+            pass
         # else:
         #     ret = u'为空'
         return ret

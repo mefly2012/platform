@@ -100,6 +100,17 @@ def date_format(ustr):
     # return False
 
 
+def date_format_with_s(ustr):  # 保留到秒
+    if re.compile(u'^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$').match(ustr):
+        return True
+    return False
+    # if is_valid_date(unicode(ustr), u"%Y年%m月%d日"):
+    #     return True
+    # if re.compile(u'^\d{4}年\d{2}月\d{2}日$').match(ustr):
+    #     return True
+    # return False
+
+
 def bbd_dotime_date_format(ustr):
     if re.compile(u'^\d{4}.\d{2}.\d{2}.?$').match(ustr):
         return True
@@ -567,20 +578,20 @@ def is_registration_number(pname_id):
     pass
 
 
-
 def is_Credit_code(pname_id):
     """检查是否是统一社会信用代码"""
     if '00000000' in pname_id:
         return False
 
     if re.compile(u'^[0-9a-zA-Z-*]{18}$').match(pname_id):
-        if pname_id[:2] in ('11', '12', '13', '19', '51', '52', '53', '59', '91', '92', '93', 'Y1')\
+        if pname_id[:2] in ('11', '12', '13', '19', '51', '52', '53', '59', '91', '92', '93', 'Y1') \
                 and pname_id[2:8] in Regin_code:
             return True
         else:
             return False
     else:
         return False
+
 
 def is_identity_code(pname_id):
     """检测是否身份证号"""
